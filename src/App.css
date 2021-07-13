@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul{
+  margin: 0;
+  padding: 0;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+li {
+  list-style: none;
+}
+body{
+  background-color: #eee;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.side-menu{
+  position: fixed;
+  height: 100%;
+  width: 300px;
+  background-color: #000;
+  box-sizing: border-box;
+  padding: 30px 20px;
+  transition: width 0.2s ease-in ;
+}
+.side-menu .top-section{
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.side-menu.inactive{
+  width: 80px;
+}
+.side-menu .top-section .logo{
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.side-menu .top-section .logo img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.side-menu .top-section .toggle-menu-btn{
+  color: #333;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%); 
+}
+
+.side-menu.inactive .top-section .toggle-menu-btn{
+  right: -50px;
+}
+.side-menu .search-controller{
+  color: #fff;
+  position: relative;
+}
+.side-menu .search-controller .search-btn{
+  position: absolute;
+  background: transparent;
+  border:0;
+  font-size: 20px;
+  color: #666;
+  top: 5px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  /* background-color: tomato; */
+}
+
+.side-menu .search-controller input[type='search']{
+  border: 0;
+  outline: none;
+  height: 35px;
+  width: 100%;
+  background-color: #333;
+  display: block;
+  margin: 20px 0px;
+  border-radius: 5px;
+  box-sizing: border-box; 
+  padding-left:40px;
+  color:#666
+}
+.side-menu .divider{
+  border: 1px #666 solid;
+  width: 100%;
+  border-radius: 1px;
 }
