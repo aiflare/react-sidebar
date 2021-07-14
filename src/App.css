@@ -1,70 +1,66 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-ul{
-  margin: 0;
-  padding: 0;
-
-}
-
-li {
+ul li {
   list-style: none;
 }
-body{
+
+body {
   background-color: #eee;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
-.side-menu{
+.side-menu {
   position: fixed;
   height: 100%;
   width: 300px;
   background-color: #000;
   box-sizing: border-box;
   padding: 30px 20px;
-  transition: width 0.2s ease-in ;
+  transition: width 0.2s ease-in;
 }
-.side-menu .top-section{
+.side-menu .top-section {
   position: relative;
 }
 
-.side-menu.inactive{
+.side-menu.inactive {
   width: 80px;
 }
-.side-menu .top-section .logo{
+.side-menu .top-section .logo {
   width: 40px;
   height: 40px;
   overflow: hidden;
   display: inline-block;
 }
 
-.side-menu .top-section .logo img{
+.side-menu .top-section .logo img {
   max-width: 100%;
   max-height: 100%;
 }
 
-.side-menu .top-section .toggle-menu-btn{
-  color: #333;
+.side-menu .top-section .toggle-menu-btn {
+  color: gray;
+  cursor: pointer;
   font-size: 20px;
   position: absolute;
   top: 50%;
   right: 0;
-  transform: translateY(-50%); 
+  transform: translateY(-50%);
 }
 
-.side-menu.inactive .top-section .toggle-menu-btn{
+.side-menu.inactive .top-section .toggle-menu-btn {
   right: -50px;
 }
-.side-menu .search-controller{
+.side-menu .search-controller {
   color: #fff;
   position: relative;
 }
-.side-menu .search-controller .search-btn{
+.side-menu .search-controller .search-btn {
   position: absolute;
   background: transparent;
-  border:0;
+  border: 0;
   font-size: 20px;
   color: #666;
   top: 5px;
@@ -74,7 +70,7 @@ body{
   /* background-color: tomato; */
 }
 
-.side-menu .search-controller input[type='search']{
+.side-menu .search-controller input[type="search"] {
   border: 0;
   outline: none;
   height: 35px;
@@ -83,12 +79,127 @@ body{
   display: block;
   margin: 20px 0px;
   border-radius: 5px;
-  box-sizing: border-box; 
-  padding-left:40px;
-  color:#666
+  box-sizing: border-box;
+  padding-left: 40px;
+  color: #666;
 }
-.side-menu .divider{
+.side-menu .divider {
   border: 1px #666 solid;
   width: 100%;
   border-radius: 1px;
+}
+.side-menu .main-menu {
+  margin: 10px 0;
+  /* border: 1px red solid; */
+}
+.side-menu .main-menu .menu-item {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+  padding: 5px;
+}
+.side-menu .main-menu .menu-item .menu-icon {
+  display: inline-block;
+  font-weight: 400;
+}
+
+.side-menu .main-menu .menu-item .menu-icon span {
+  display: inline-block;
+  margin: 5px 0;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+
+.side-menu.inactive .main-menu .menu-item .menu-icon span {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu .main-menu .sub-menu {
+  color: #aaa;
+  margin-left: 10px;
+  border-left: 1px solid #aaa;
+  box-sizing: border-box;
+  padding-left: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in;
+}
+
+.side-menu .main-menu .sub-menu.active {
+  max-height: 200px;
+}
+
+.side-menu .main-menu .sub-menu span {
+  display: inline-block;
+  font-size: 15px;
+  margin: 5px 0;
+  font-weight: 700;
+}
+
+.side-menu .main-menu .menu-item .menu-icon .menu-text {
+  /*  */
+  margin: 0px 0px 0px 10px;
+  position: absolute;
+  display: inline-block;
+  /* line-height: 40px; */
+}
+
+.side-menu-footer {
+  position: absolute;
+  left: 0px;
+  height: 80px;
+  width: 100%;
+  background-color: #333;
+  bottom: 0px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.side-menu-footer .footer-avtaar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.side-menu-footer .footer-avtaar img {
+  max-width: 100%;
+}
+
+.side-menu.inactive .side-menu-footer .footer-avtaar img {
+  max-width: 100%;
+}
+
+.side-menu-footer .side-text {
+  display: inline-block;
+  margin: 15px 10px;
+  color: #fff;
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+
+.side-menu.inactive .side-menu-footer .side-text {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.side-menu-footer .side-text h5 {
+  font-weight: 500;
+}
+.side-menu-footer .side-text p {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0px;
 }
