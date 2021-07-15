@@ -7,7 +7,7 @@ import userIcon from '../assets/user.jpg'
 const menuItems = [
     {"name": "Dashboard", exact:true, "to":"/", iconClassName:"bi bi-speedometer2"},
     {"name": "Employees",
-        to:'',
+        to:false,
         iconClassName:"bi bi-people-fill",
         "subMenus":[{"name": "Hourly", "to":"/employees/hourly", iconClassName:"bi bi-speedometer2"}, 
                     {"name": "Regular", "to":"/employees/regular", iconClassName:"bi bi-speedometer2"}]},
@@ -15,7 +15,7 @@ const menuItems = [
 ]
 
 const SideMenu = function SideMenu({onCollapse}) {
-    const [inactive, setInactive] = useState(true);
+    const [inactive, setInactive] = useState(false);
     
     useEffect(() => {
         if (inactive){
