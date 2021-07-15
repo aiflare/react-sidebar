@@ -26,7 +26,7 @@ const SideMenu = function SideMenu({onCollapse}) {
         }
         onCollapse(inactive);
          
-    }, [inactive])
+    }, [inactive, onCollapse])
 
     return (
         <div className={`side-menu ${inactive ? "inactive": ""}`}>
@@ -62,11 +62,7 @@ const SideMenu = function SideMenu({onCollapse}) {
                                 to={menuItem.to}
                                 subMenus={menuItem.subMenus}
                                 iconClassName={menuItem.iconClassName}
-                                onClick={()=>{
-                                    if (inactive){
-                                        setInactive(false)
-                                    }
-                                }}
+                               
                                 />
                         ))
                     }
