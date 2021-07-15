@@ -5,8 +5,8 @@ function MenuItem({name, subMenus, iconClassName, to, exact, inactive}) {
     const [expand, setExpand] = useState(false);
     return (
         <li>
-            {!inactive?
-            <NavLink  exact={exact} to={to?to:""} onClick={() => setExpand(!expand)} className="menu-item">
+            {!inactive || !to ?
+            <NavLink  exact={exact} to={to} onClick={() => setExpand(!expand)} className="menu-item">
                 <div className="menu-icon">
                     <i className={iconClassName}></i><span className="menu-text">{name}</span>
                 </div>
