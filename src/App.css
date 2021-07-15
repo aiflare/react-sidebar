@@ -41,7 +41,7 @@ body {
 }
 
 .side-menu .top-section .toggle-menu-btn {
-  color: gray;
+  color: #fff;
   cursor: pointer;
   font-size: 20px;
   position: absolute;
@@ -51,7 +51,7 @@ body {
 }
 
 .side-menu.inactive .top-section .toggle-menu-btn {
-  right: -50px;
+  right: -30px;
 }
 .side-menu .search-controller {
   color: #fff;
@@ -95,16 +95,22 @@ body {
 .side-menu .main-menu .menu-item {
   color: #aaa;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 15px;
   display: block;
-  font-weight: 400;
+  font-weight: 300;
   position: relative;
   cursor: pointer;
   padding: 5px;
 }
+
+.side-menu .main-menu .menu-item.active {
+  background-color: #666;
+  border-radius: 10px;
+  color: #fff;
+}
 .side-menu .main-menu .menu-item .menu-icon {
   display: inline-block;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .side-menu .main-menu .menu-item .menu-icon span {
@@ -131,16 +137,36 @@ body {
   overflow: hidden;
   transition: max-height 0.2s ease-in;
 }
+/* .side-menu .main-menu .sub-menu a{
+  display: block;
+  margin: 5px 0;
+} */
+
+.side-menu .main-menu .sub-menu a {
+  display: inline-block;
+  font-size: 15px;
+  margin: 5px 0;
+  font-weight: 300;
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 5px;
+  color: #aaa;
+}
+.side-menu .main-menu .sub-menu a.active {
+  background: #666;
+  display: block;
+  border-radius: 10px;
+  color: #fff;
+  padding: 8px;
+}
 
 .side-menu .main-menu .sub-menu.active {
   max-height: 200px;
 }
 
-.side-menu .main-menu .sub-menu span {
-  display: inline-block;
-  font-size: 15px;
-  margin: 5px 0;
-  font-weight: 700;
+.side-menu .main-menu .sub-menu .sub-item-text {
+  margin: 5px;
 }
 
 .side-menu .main-menu .menu-item .menu-icon .menu-text {
@@ -196,10 +222,25 @@ body {
   overflow: hidden;
 }
 .side-menu-footer .side-text h5 {
-  font-weight: 500;
+  font-weight: 300;
 }
 .side-menu-footer .side-text p {
   font-size: 15px;
   font-weight: 300;
   margin: 0px;
+}
+
+.container {
+  margin-left: 300px;
+  transition: margin-left 0.2s ease-in;
+}
+
+.container.inactive {
+  margin-left: 80px;
+  transition: opacity 0.2s ease-in;
+}
+
+.navbar {
+  min-height: 80px;
+  background-color: #000;
 }

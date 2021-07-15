@@ -3,23 +3,29 @@ import logo from '../assets/logo/logo.png'
 import MenuItem from './MenuItem'
 import userIcon from '../assets/user.jpg'
 
+
 const menuItems = [
-    {"name": "Dashboard", "to":"/", iconClassName:"bi bi-speedometer2"},
-    {"name": "Employees", "to":"/employees",
-    iconClassName:"bi bi-people-fill",
-        "subMenus":[{"name": "Hourly"}, {"name": "Regular"}]},
-    {"name": "Dashboard", "to":"/", iconClassName:"bi bi-speedometer2",}
+    {"name": "Dashboard", exact:true, "to":"/", iconClassName:"bi bi-speedometer2"},
+    {"name": "Employees",
+        "to":"/employees",
+        exact:true,
+        iconClassName:"bi bi-people-fill",
+        "subMenus":[{"name": "Hourly", "to":"/employees/hourly", iconClassName:"bi bi-speedometer2"}, 
+                    {"name": "Regular", "to":"/employees/regular", iconClassName:"bi bi-speedometer2"}]},
+    {"name": "Dashboard", "to":"/dashboard2", iconClassName:"bi bi-speedometer2",}
 ]
 
-const SideMenu = function SideMenu(props) {
+const SideMenu = function SideMenu({onCollapse}) {
     const [inactive, setInactive] = useState('');
     
     useEffect(() => {
         if (inactive){
-            document.querySelectorAll('.sub-menu').forEach(function(el){
+            document.querySelectorAll('.active').forEach(function(el){
                 el.classList.remove('active');
             })
         }
+        onCollapse(inactive);
+         
     }, [inactive])
 
     return (
@@ -32,7 +38,7 @@ const SideMenu = function SideMenu(props) {
                         setInactive(!inactive);
                     }}  
                     className="toggle-menu-btn" >
-                   {inactive?  <i className="bi bi-arrow-right-square"></i>: <i className="bi bi-arrow-left-square"></i>}
+                   {inactive?  <i className="bi bi-list"></i>: <i className="bi bi-list"></i>}
                 </div>
             </div>
             <div className="search-controller">
@@ -52,6 +58,7 @@ const SideMenu = function SideMenu(props) {
                             <MenuItem 
                                 key={index}
                                 name={menuItem.name} 
+                                exact={menuItem.exact}
                                 to={menuItem.to}
                                 subMenus={menuItem.subMenus}
                                 iconClassName={menuItem.iconClassName}
