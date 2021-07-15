@@ -34,7 +34,7 @@ function App() {
           <SideMenu onCollapse={(inactive) =>{
             setInactive(inactive);
           }} />
-          <div className="navbar">Hello</div>
+          {/* <div className={`navbar ${inactive?"side-bar-closed":""} `}>Hello</div> */}
           <div className={`container ${inactive?"inactive":""} `}>
             <Switch>
               <Route exact path={'/'}> <Dashboard/></Route>

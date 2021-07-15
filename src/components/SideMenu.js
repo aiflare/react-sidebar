@@ -47,10 +47,7 @@ const SideMenu = function SideMenu({onCollapse}) {
                 </div>
                 <input type="search" placeholder="Search" />
             </div>
-
-            <div className="divider">
-
-            </div>
+            <div className="divider"></div>
              <div className="main-menu"> 
                 <ul>
                     {
@@ -62,15 +59,18 @@ const SideMenu = function SideMenu({onCollapse}) {
                                 to={menuItem.to}
                                 subMenus={menuItem.subMenus}
                                 iconClassName={menuItem.iconClassName}
+                                inactive={inactive}
                                
                                 />
+                            
                         ))
-                    }
+                    } 
                    
                 </ul>
              </div>
 
         <div className="side-menu-footer">
+            <div className="divider"></div>
             <div className="footer-avtaar">
                 <img src={userIcon} alt="Footer-logo" />
             </div>
