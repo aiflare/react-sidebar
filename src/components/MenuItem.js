@@ -3,11 +3,16 @@ import { NavLink } from 'react-router-dom'
 
 function MenuItem({name, subMenus, iconClassName, to, exact, inactive}) {
     const [expand, setExpand] = useState(false);
+    const handleClick = (e) => {
+        setExpand(!expand);
+        return (name === 'Employees')?e.preventDefault():null;
+    }
+
     return (
         <li>
             {!inactive || !to ?
             <NavLink  
-            exact={exact} to={to} onClick={() => setExpand(!expand)} className="menu-item">
+            exact={exact} to={to} onClick={handleClick} className="menu-item">
                 <div className="menu-icon">
                     <i className={iconClassName}></i><span className="menu-text">{name}</span>
                 </div>

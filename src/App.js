@@ -25,20 +25,22 @@ function App() {
   const [inactive, setInactive] = useState(false);
   return (
     <div className="App">
-      <Router>
-          <SideMenu onCollapse={(inactive) =>{
-            setInactive(inactive);
-          }} />
-          <Navbar inactive={inactive}/>
-          <div className={`container ${inactive?"inactive":""} `}>
-            <Switch>
-              <Route exact path={'/'}> <Dashboard/></Route>
-              <Route  path={'/employees/hourly'}> <Hourly/></Route>
-              <Route  path={'/employees/regular'}> <Regualr/></Route>
-              <Route exact path={'/dashboard2'}> <Dashboard2/></Route>
-            </Switch>
-          </div>
-        </Router>
+      <div className="main-app">
+        <Router>
+            <SideMenu onCollapse={(inactive) =>{
+              setInactive(inactive);
+            }} />
+            <Navbar inactive={inactive}/>
+            <div className={`container ${inactive?"inactive":""} `}>
+              <Switch>
+                <Route exact path={'/'}> <Dashboard/></Route>
+                <Route  path={'/employees/hourly'}> <Hourly/></Route>
+                <Route  path={'/employees/regular'}> <Regualr/></Route>
+                <Route exact path={'/dashboard2'}> <Dashboard2/></Route>
+              </Switch>
+            </div>
+          </Router>
+      </div>
     </div>
   );
 }

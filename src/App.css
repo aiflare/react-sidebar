@@ -12,6 +12,10 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
+.main-app {
+  overflow: hidden;
+}
+
 .side-menu {
   position: fixed;
   height: 100%;
