@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import SideMenu from './components/SideMenu';
+import Navbar  from './components/Navbar';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -9,17 +10,12 @@ import {
  
 const Dashboard = () =>{
   return <h1>Dashboard</h1>
-  
 };
 const Hourly = () =>{
   return <h1>Hourly</h1>
-
 };
 const Regualr = () =>{
-  
   return <h1>Regular</h1>
-  
-  
 };
 const Dashboard2 = () =>{
   return <h1>Dashboard2</h1>
@@ -30,11 +26,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-
           <SideMenu onCollapse={(inactive) =>{
             setInactive(inactive);
           }} />
-          {/* <div className={`navbar ${inactive?"side-bar-closed":""} `}>Hello</div> */}
+          <Navbar inactive={inactive}/>
           <div className={`container ${inactive?"inactive":""} `}>
             <Switch>
               <Route exact path={'/'}> <Dashboard/></Route>
